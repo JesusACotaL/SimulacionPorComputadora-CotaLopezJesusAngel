@@ -1,6 +1,7 @@
-# Personaje Jesus Cota 220790768
- 
-![Pingüino - Frente](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/3b2953d9-31cb-4216-870f-7c19443a68eb)
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/71a536f4-62a2-4d8c-9d5d-c53129bab225)
 
 
-![Pingüino - Detras](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/a81b030a-1539-4d89-accd-fa6010cede8b)
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/a7f4cda1-2f1c-4fed-9ba9-467762eb601c)
+
+
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/2bfca3e9-ac10-46f1-b61c-258e1bcf9994)
