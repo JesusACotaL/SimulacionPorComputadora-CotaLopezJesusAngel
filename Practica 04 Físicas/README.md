@@ -1,7 +1,8 @@
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/71a536f4-62a2-4d8c-9d5d-c53129bab225)
+![Estado 1](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/242473bd-fb27-4dd8-b9ce-9105efb0e722)
 
+![Estado 2](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/ad0c7a99-7936-4eae-90fb-807f4ef9e27e)
 
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/a7f4cda1-2f1c-4fed-9ba9-467762eb601c)
+![Estado 3](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/954bdd1b-29c9-42e4-8f77-e11b845dd1bd)
 
+![Estado final](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/e1394066-bf91-4c3c-849c-b35bc87f02fe)
 
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/2bfca3e9-ac10-46f1-b61c-258e1bcf9994)
