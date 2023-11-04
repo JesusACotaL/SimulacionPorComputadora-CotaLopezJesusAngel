@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://cucoinxoup8mk"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_7b0x3"]
+[ext_resource type="PackedScene" uid="uid://ckk6linqd5oth" path="res://scenes/player.tscn" id="1_x2t02"]
+[ext_resource type="PackedScene" uid="uid://bulvtm516qy7b" path="res://scenes/mob.tscn" id="2_v1n6t"]
+[ext_resource type="FontFile" uid="uid://bgivmcaoxxvs7" path="res://fonts/Montserrat-Medium.ttf" id="4_c4n3q"]
+[ext_resource type="Script" path="res://scripts/Blue Label.gd" id="5_m41xf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r20dd"]
+size = Vector3(80, 2, 80)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17tn3"]
+size = Vector3(80, 2, 80)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlmfc"]
+albedo_color = Color(0.678431, 0, 0.756863, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6nni0"]
+material = SubResource("StandardMaterial3D_qlmfc")
+
+[sub_resource type="Curve3D" id="Curve3D_0hnpl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -35, 1, -33, 0, 0, 0, 0, 0, 0, -36, 2, 36, 0, 0, 0, 0, 0, 0, 38, 1, 35, 0, 0, 0, 0, 0, 0, 33, 1, -35, 0, 0, 0, 0, 0, 0, -35, 1, -33),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Theme" id="Theme_jrjo8"]
+default_font = ExtResource("4_c4n3q")
+default_font_size = 22
+
+[node name="Main" type="Node"]
+script = ExtResource("1_7b0x3")
+mob_scene = ExtResource("2_v1n6t")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_r20dd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_17tn3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_x2t02")]
+
+[node name="Lakitu" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Lakitu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="Cilindros" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cilindros"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.9592, -0.173917, 35.5151)
+mesh = SubResource("CylinderMesh_6nni0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cilindros"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3598, 1.08968, -33.2784)
+mesh = SubResource("CylinderMesh_6nni0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cilindros"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7758, 1.44831, 35.2442)
+mesh = SubResource("CylinderMesh_6nni0")
+
+[node name="ff" type="MeshInstance3D" parent="Cilindros"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4954, 1, -35.2605)
+mesh = SubResource("CylinderMesh_6nni0")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_0hnpl")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.999895, 0.000209973, 0.0144897, -7.27596e-12, 0.999895, -0.0144897, -0.0144912, -0.0144882, -0.99979, -35, 1, -33)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jrjo8")
+
+[node name="BlueLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 18.0
+offset_right = 392.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "Score: 0"
+script = ExtResource("5_m41xf")
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 0.203922)
+
+[node name="Label" type="Label" parent="UserInterface/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -15.5
+offset_right = 141.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Enter To Play Again
+
+Hecho por:
+
+Saul Alfonso Torres Munguia
+Jesús Ángel Cota López"
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

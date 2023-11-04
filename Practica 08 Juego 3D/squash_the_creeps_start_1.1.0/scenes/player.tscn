@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckk6linqd5oth"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_4bmnv"]
+[ext_resource type="PackedScene" uid="uid://c3xpk6u7l1a0y" path="res://art/player.glb" id="1_t068n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhn0q"]
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yva7k"]
+height = 0.3
+radius = 1.2
+
+[sub_resource type="Animation" id="Animation_yqtcn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Brincos Dieras:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Brincos Dieras:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_22llc"]
+resource_name = "float"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Brincos Dieras:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.7, 1.2),
+"transitions": PackedFloat32Array(0.42, 0.44, 2.07),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0.35, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Brincos Dieras:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 1.2),
+"transitions": PackedFloat32Array(0.42, 0.44, 2.07),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(-0.15708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgcab"]
+_data = {
+"RESET": SubResource("Animation_yqtcn"),
+"float": SubResource("Animation_22llc")
+}
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("1_4bmnv")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Brincos Dieras" parent="Pivot" instance=ExtResource("1_t068n")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0356451, 0.978735, 0)
+shape = SubResource("SphereShape3D_bhn0q")
+
+[node name="MobDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_yva7k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_sgcab")
+}
+
+[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
