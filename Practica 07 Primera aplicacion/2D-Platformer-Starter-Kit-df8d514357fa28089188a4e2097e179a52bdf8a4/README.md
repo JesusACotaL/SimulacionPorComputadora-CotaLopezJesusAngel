@@ -1,28 +1,13 @@
-# PLATFORMER 2D STARTER BY GAMES2PLAY STUDIOS
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/8a922da4-abe7-4358-8ac6-a9bc14a0f95f)
 
-This starter kit includes all the essential mechanics for your 2d platformer game. Using this kit,
-you will be able to make your own 2d platformer in no time.
 
-**This Kit Includes:**
-- Juicy Platformer Controller
-- Animated Player
-- 2 Demo Levels
-- Level Management
-- Score System
-- Sound Effects
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/a4b182f5-dee3-4726-ba46-43c88c7421a2)
 
-The code is documented for better understanding and each script and function is documented with its purpose.
-The code is also beginner friendly, who wants to learn by diving directly into the coding game!
 
-## Screenshots
-![2D Platformer Starter Kit Splash](https://github.com/AdilDevStuff/2D-Platformer-Starter-Kit/assets/94475453/0714f861-5db9-4c49-a5a7-c00708c0f9b5)
-![2D Starter Platformer SS 1](https://github.com/AdilDevStuff/2D-Platformer-Starter-Kit/assets/94475453/566dafe8-273d-4b60-97f6-4b29930c9eca)
-![2D Starter Platformer SS 2](https://github.com/AdilDevStuff/2D-Platformer-Starter-Kit/assets/94475453/aab09d8c-b7d7-459e-9313-9ec62bd585b8)
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/5196ccf3-7b47-47b4-8957-192621da1d43)
 
-## Credits
 
-**2D Assets**
-www.Kenney.nl
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/cd3aeaad-22c0-43b0-a417-c90990798d2d)
 
-**Sound Fx**
-Gdfxr (Sfxr plugin for godot)
+
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/f57b50e9-0b09-43a8-9962-4fb0cba9099c)
