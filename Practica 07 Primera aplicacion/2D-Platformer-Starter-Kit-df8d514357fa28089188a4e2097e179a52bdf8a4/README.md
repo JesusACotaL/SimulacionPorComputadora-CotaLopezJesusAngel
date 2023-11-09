@@ -1,3 +1,5 @@
+![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/74988e9f-5ce3-43b8-9b7b-ee3c711a88f2)
+
 ![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/8a922da4-abe7-4358-8ac6-a9bc14a0f95f)
 
 
