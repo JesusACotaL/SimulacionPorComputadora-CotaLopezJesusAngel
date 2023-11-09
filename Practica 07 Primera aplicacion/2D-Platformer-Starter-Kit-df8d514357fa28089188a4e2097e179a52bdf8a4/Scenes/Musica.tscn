@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpnxiqot54ku4"]
+
+[ext_resource type="AudioStream" uid="uid://hlterdcnk3fg" path="res://Assets/Sound/hello-zepp.ogg" id="1_dsvof"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_dsvof")
+autoplay = true
