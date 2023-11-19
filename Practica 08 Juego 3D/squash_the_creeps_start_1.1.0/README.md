@@ -1,15 +1,7 @@
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/74988e9f-5ce3-43b8-9b7b-ee3c711a88f2)
+![Captura 1](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/c68cd874-fd9b-4b06-a04d-626c67342eac)
 
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/8a922da4-abe7-4358-8ac6-a9bc14a0f95f)
+![Captura 2](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/01cfd9db-04a3-48bd-be80-4e5db1706d04)
 
+![Captura 3](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/79ab1b7c-cbb5-4a15-9ff3-4f4d43e62ace)
 
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/a4b182f5-dee3-4726-ba46-43c88c7421a2)
-
-
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/5196ccf3-7b47-47b4-8957-192621da1d43)
-
-
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/cd3aeaad-22c0-43b0-a417-c90990798d2d)
-
-
-![image](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/f57b50e9-0b09-43a8-9962-4fb0cba9099c)
+![Captura 4](https://github.com/JesusACotaL/SimulacionPorComputadora-CotaLopezJesusAngel/assets/97976469/5f84c9bf-fd08-444c-b66f-37d13aaac69f)
