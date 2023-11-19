@@ -1,0 +1,8 @@
+res://scenes/main.tscn
+res://scenes/main.gd
+res://scenes/Main2.tscn
+res://scripts/Mob.gd
+res://scenes/player.tscn
+res://scenes/mob.tscn
+res://scenes/Coin.tscn
+res://scenes/PowerUp.tscn

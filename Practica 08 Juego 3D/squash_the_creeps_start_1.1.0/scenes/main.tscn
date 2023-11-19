@@ -1,10 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cucoinxoup8mk"]
+[gd_scene load_steps=17 format=3 uid="uid://cucoinxoup8mk"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_7b0x3"]
 [ext_resource type="PackedScene" uid="uid://ckk6linqd5oth" path="res://scenes/player.tscn" id="1_x2t02"]
 [ext_resource type="PackedScene" uid="uid://bulvtm516qy7b" path="res://scenes/mob.tscn" id="2_v1n6t"]
+[ext_resource type="PackedScene" uid="uid://dum81eubbq3cg" path="res://scenes/Coin.tscn" id="3_272jb"]
 [ext_resource type="FontFile" uid="uid://bgivmcaoxxvs7" path="res://fonts/Montserrat-Medium.ttf" id="4_c4n3q"]
+[ext_resource type="PackedScene" uid="uid://7jgogpqv6njm" path="res://scenes/PowerUp.tscn" id="4_qnhj8"]
+[ext_resource type="Script" path="res://scripts/UserInterface.gd" id="5_8k4rg"]
 [ext_resource type="Script" path="res://scripts/Blue Label.gd" id="5_m41xf"]
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="7_witn8"]
+[ext_resource type="Script" path="res://scripts/Coins.gd" id="8_jplps"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r20dd"]
 size = Vector3(80, 2, 80)
@@ -12,11 +17,11 @@ size = Vector3(80, 2, 80)
 [sub_resource type="BoxMesh" id="BoxMesh_17tn3"]
 size = Vector3(80, 2, 80)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlmfc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2auo1"]
 albedo_color = Color(0.678431, 0, 0.756863, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6nni0"]
-material = SubResource("StandardMaterial3D_qlmfc")
+material = SubResource("StandardMaterial3D_2auo1")
 
 [sub_resource type="Curve3D" id="Curve3D_0hnpl"]
 _data = {
@@ -32,6 +37,8 @@ default_font_size = 22
 [node name="Main" type="Node"]
 script = ExtResource("1_7b0x3")
 mob_scene = ExtResource("2_v1n6t")
+coin_scene = ExtResource("3_272jb")
+powerup_scene = ExtResource("4_qnhj8")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -78,7 +85,7 @@ mesh = SubResource("CylinderMesh_6nni0")
 curve = SubResource("Curve3D_0hnpl")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.999895, 0.000209973, 0.0144897, -7.27596e-12, 0.999895, -0.0144897, -0.0144912, -0.0144882, -0.99979, -35, 1, -33)
+transform = Transform3D(-0.999892, 0.000209973, 0.0144897, -7.27593e-12, 0.999895, -0.0144897, -0.0144912, -0.0144882, -0.99979, -35, 1, -33)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -92,6 +99,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_jrjo8")
+script = ExtResource("5_8k4rg")
 
 [node name="BlueLabel" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -126,11 +134,27 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press Enter To Play Again
+"
 
-Hecho por:
+[node name="Timer" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 16.0
+offset_right = 498.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 
-Saul Alfonso Torres Munguia
-Jesús Ángel Cota López"
+[node name="Coins" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 18.0
+offset_right = 146.0
+offset_bottom = 49.0
+text = "Coins: 0"
+script = ExtResource("8_jplps")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("7_witn8")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

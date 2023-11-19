@@ -12,11 +12,14 @@ config_version=5
 
 config/name="Squash the Creeps (3D)"
 config/features=PackedStringArray("4.1")
+boot_splash/bg_color=Color(0.878431, 0.392157, 0.921569, 1)
+boot_splash/image="res://art/Splash.png"
 config/icon="res://icon.png"
 
 [autoload]
 
 DjPayasox3="*res://scenes/dj_payasox_3.tscn"
+GameManager="*res://scripts/GameManager.gd"
 
 [display]
 

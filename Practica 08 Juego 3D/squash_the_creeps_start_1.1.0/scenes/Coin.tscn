@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dum81eubbq3cg"]
+
+[ext_resource type="Script" path="res://scripts/Coin.gd" id="1_5egh1"]
+[ext_resource type="PackedScene" uid="uid://bgacu28bmw7bf" path="res://coin2.tscn" id="2_33j2c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s40tu"]
+radius = 1.0
+
+[node name="Coin" type="CharacterBody3D" groups=["coin"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00932, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_5egh1")
+
+[node name="Pivote" type="Node3D" parent="."]
+
+[node name="coin" parent="Pivote" instance=ExtResource("2_33j2c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_s40tu")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236941, 0.244343, -0.130896)
+aabb = AABB(-0.671657, -1.1322, -0.964196, 0.881399, 1.91771, 2.24187)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

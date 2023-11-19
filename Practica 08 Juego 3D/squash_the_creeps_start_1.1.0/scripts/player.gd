@@ -63,14 +63,29 @@ func _physics_process(delta):
 			if Vector3.UP.dot(collision.get_normal()) > 0.1:
 				mob.squash()
 				target_velocity.y=bounce_impulse
-	
+		if collision.get_collider().is_in_group("coin"):
+			var coin = collision.get_collider()
+			if Vector3.UP.dot(collision.get_normal()) > 0.1:
+				coin.grabbed()
+				target_velocity.y=bounce_impulse
+		if collision.get_collider().is_in_group("powerup"):
+			var power = collision.get_collider()
+			if Vector3.UP.dot(collision.get_normal()) > 0.1:
+				power.powered()
+				target_velocity.y=bounce_impulse
 
 func die():     
 	hit.emit()     
 	queue_free()
 
 func _on_mob_detector_body_entered(body):
-	die()
+	if (body.is_in_group("coin")):
+		body.grabbed()
+	elif (body.is_in_group("powerup")):
+		speed +=2
+		body.powered()
+	else:
+		die()
 
 
 

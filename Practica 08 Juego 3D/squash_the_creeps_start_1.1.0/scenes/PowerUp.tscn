@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://7jgogpqv6njm"]
+
+[ext_resource type="ArrayMesh" uid="uid://bl71k16wiwudh" path="res://KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_burger.obj" id="1_adyti"]
+[ext_resource type="Script" path="res://scripts/PowerUp.gd" id="1_kcdpy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_036ky"]
+size = Vector3(1, 0.930915, 1)
+
+[node name="PowerUp" type="CharacterBody3D" groups=["powerup"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_kcdpy")
+
+[node name="Pivote" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.0773337, 0)
+mesh = ExtResource("1_adyti")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0174444, 1.0916, 0)
+shape = SubResource("BoxShape3D_036ky")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.327098, 1.47438, -0.665151)
+aabb = AABB(-0.70203, -0.641006, -0.12863, 0.942147, 0.981231, 0.926205)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

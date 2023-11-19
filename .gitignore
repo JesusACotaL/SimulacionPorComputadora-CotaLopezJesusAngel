@@ -1,0 +1,10 @@
+
+*.cfg
+*.md5
+*.ctex
+*.tmp
+*.scn
+*.glb
+*.fbx
+*.import
+*.png

@@ -36,3 +36,5 @@ func _on_visible_on_screen_notifier_3d_screen_exited():
 func squash():
 	squashed.emit()
 	queue_free() # Destroy this node
+	if (GameManager.global_score >= 5):
+		print("cambio de nivel")
